@@ -1,29 +1,22 @@
 <html>
+
 <head>
     <title>My blog</title>
 </head>
+
 <body>
     <div>
         <h1>Hi, i am deepak</h1>
     </div>
 
+{{ posts }}
+{%  for post in posts %}
     <div>
-        <p>published: 7 october,2016</p>
-        <h2><a href="">My first blog</a></h2>
-        <p>My name is Deepak Goyal.I am pursuing my B.tech from IIIT Vadodara in Information Technology branch.</p>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
-    <div>
-        <p>published: 7 october,2016</p>
-        <h2><a href="">My second blog</a></h2>
-        <p>I know some of languages like c, java(core), python.Now i am doing Django.I have
-            some web developement skills like Html,css,php,javascript,bootstrap.</p>
-    </div>
-    <div>
-        <p>published: 7 october,2016</p>
-        <h2><a href="">My third blog</a></h2>
-        <p>I am fond of watching wwe.I am a big fan of Roman Reings.</p>
-    </div>
+{% endfor %}
 
 </body>
 </html>
